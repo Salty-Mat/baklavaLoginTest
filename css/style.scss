@@ -1,0 +1,193 @@
+// i made this like a year ago and i forgor how it works omegalul
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0B0E11;
+}
+
+::selection {
+  background: #DB1F35;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: #DB1F35;
+  /* Gecko Browsers */
+}
+
+h1 {
+  z-index: 10;
+  position: fixed;
+  top: 4%;
+  left: 4%;
+  font-size: 6vmax;
+  color: #DEE3EA;
+  animation: test 2s cubic-bezier(.79, .12, .35, .83);
+  transform: translateY(15%);
+}
+
+p {
+  color: #B5B5B5;
+  font-size: 1em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 185%;
+  text-align: center;
+}
+
+@keyframes test {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(15%);
+  }
+}
+
+
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+
+  overflow: hidden;
+}
+
+.ocean {
+  z-index: 1;
+  position: fixed;
+  transform: rotate(110deg);
+  height: 175%;
+  width: 100%;
+  bottom: -10%;
+  left: -65%;
+  background: #151A21;
+}
+
+.wave {
+  z-index: 1;
+  position: fixed;
+  background: url('/wave.svg') repeat-x;
+  top: -193px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  /* animation-delay: 2s; */
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  z-index: 1;
+  position: fixed;
+
+  top: -175px;
+
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+
+  0% {
+    margin-left: 0;
+  }
+
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+//** variables
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #a3a3a3;
+$button-bg-color: #DB1F35;
+$button-text-color: #fff;
+
+
+.btn {
+  display: inline-block;
+  position: fixed;
+  font-size: medium;
+  font-weight: bold;
+  top: 45%;
+  left: 65%;
+  padding: 0.9em 5em;
+  background: $button-bg-color;
+  color: $button-text-color;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+
+  .ocean {
+    position: fixed;
+    transform: rotate(115deg);
+    height: 175%;
+    width: 200%;
+    bottom: 0%;
+    left: -150vmax;
+  }
+
+  p {
+
+    font-size: 1em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+
+  .ocean {
+    position: fixed;
+    transform: rotate(115deg);
+    height: 175%;
+    width: 200%;
+    bottom: 10%;
+    left: -125vmax;
+
+  }
+
+  p {
+
+    font-size: 1em;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
